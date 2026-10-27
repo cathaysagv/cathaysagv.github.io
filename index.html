@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathaysa González Vega — Desarrolladora Web</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Lienzo 2D -->
+    <canvas id="constellation-canvas"></canvas>
+    <div class="ambient-auras"></div>
+
+    <div id="toast" class="toast-notification">
+        <span class="pulse-dot"></span>
+        <span id="toast-text">Listo</span>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar-wrapper">
+        <header class="navbar">
+            <a href="#hero" class="brand">CGV<span>.dev</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#education">Formación</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact" class="nav-cta">Contacto</a></li>
+            </ul>
+
+            <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </header>
+    </div>
+
+    <!-- Menú desplegable móvil -->
+    <nav id="mobile-drawer" class="mobile-drawer">
+        <a href="#about" class="drawer-link">01 · Sobre mí</a>
+        <a href="#skills" class="drawer-link">02 · Habilidades</a>
+        <a href="#education" class="drawer-link">03 · Formación</a>
+        <a href="#projects" class="drawer-link">04 · Proyectos</a>
+        <a href="#contact" class="drawer-link">05 · Contacto</a>
+    </nav>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main class="container">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero-editorial">
+            <div class="hero-editorial-inner">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>CFGS DAW · DIGITECH FP</span>
+                </div>
+
+                <h1 class="hero-title-editorial">
+                    Cathaysa <br>
+                    <span class="gradient-name">González Vega</span>
+                </h1>
+
+                <p class="hero-role-subtitle">
+                    Desarrollo Web Full-Stack
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Explorar Proyectos</a>
+                    <a href="https://github.com/cathaysagv" target="_blank" rel="noopener noreferrer" class="btn btn-glass">GitHub ↗</a>
+                    <a href="#contact" class="btn btn-glass">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                        Contacto
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN SOBRE MÍ -->
+        <section id="about">
+            <div class="about-narrow-wrapper">
+                <div class="section-header">
+                    <span class="section-tag">01 · Perfil</span>
+                    <h2 class="section-title">Sobre mí</h2>
+                </div>
+
+                <div class="about-card">
+                    <h3 class="about-headline">
+                        Necesitaba un cambio, y lo encontré en el desarrollo web.
+                    </h3>
+
+                    <p class="about-paragraph">
+                        Vengo del marketing y de la atención al público como dependienta. Ahí aprendí a escuchar, a mantener la calma en momentos de tensión y a detectar qué frustra a alguien antes de que lo diga. Hoy llevo eso al diseño de interfaces: pensar primero en quién las va a usar.
+                    </p>
+
+                    <p class="about-paragraph">
+                        Después de unos años en tienda, quería algo que me hiciera crecer y donde pudiera crear cosas propias. Empecé con el desarrollo web y me enganchó resolver problemas con código.
+                    </p>
+
+                    <p class="about-paragraph">
+                        Ahora estudio el CFGS de Desarrollo de Aplicaciones Web y aprendo construyendo: cada proyecto es una forma de entender cómo encajan las piezas. Busco incorporarme a un equipo donde aportar esa doble mirada: criterio técnico para resolver problemas y empatía para crear software que dé gusto usar.
+                    </p>
+
+                    <div class="about-columns">
+                        <div class="about-col">
+                            <h4 class="column-subtitle">ÁREAS DE INTERÉS</h4>
+                            <div class="pills-wrap">
+                                <span class="about-pill">Desarrollo Frontend</span>
+                                <span class="about-pill">Arquitectura Backend</span>
+                                <span class="about-pill">Bases de Datos SQL</span>
+                                <span class="about-pill">Diseño de Interfaces (UI/UX)</span>
+                                <span class="about-pill">Clean Code</span>
+                            </div>
+                        </div>
+
+                        <div class="about-col">
+                            <h4 class="column-subtitle">TECNOLOGÍAS Y ENTORNOS</h4>
+                            <div class="pills-wrap">
+                                <span class="about-pill">HTML5 &amp; CSS3</span>
+                                <span class="about-pill">JavaScript</span>
+                                <span class="about-pill">PostgreSQL</span>
+                                <span class="about-pill">Java</span>
+                                <span class="about-pill">Git &amp; GitHub</span>
+                                <span class="about-pill">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN HABILIDADES Y HERRAMIENTAS -->
+        <section id="skills">
+            <div class="section-header">
+                <span class="section-tag">02 · Stack Técnico</span>
+                <h2 class="section-title">Habilidades y Herramientas</h2>
+            </div>
+
+            <div class="skills-three-col-grid">
+
+                <!-- Columna 1: Frontend & Maquetación -->
+                <div class="bento-category-card">
+                    <div class="bento-category-head">
+                        <span class="bento-category-tag" style="color: var(--cyan);">Frontend &amp; Maquetación</span>
+                        <span class="bento-category-sub">UI &amp; DOM</span>
+                    </div>
+
+                    <div class="skill-cards-list">
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #f97316;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4 3l1.45 16.2L12 21l6.55-1.8L20 3H4zm12.9 5.3H9.1l.2 2.2h7.4l-.6 6.6-4.1 1.1-4.1-1.1-.3-3.2h2v1.6l2.4.6 2.4-.6.2-2.7H7.3l-.5-6.5h10.3l-.2 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">HTML5</span>
+                            </div>
+                            <span class="skill-mono-badge">Semántica Web</span>
+                        </div>
+
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #38bdf8;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4 3l1.45 16.2L12 21l6.55-1.8L20 3H4zm12.3 13.1l-4.3 1.2-4.3-1.2-.3-3.2h2.1l.1 1.6 2.4.7 2.4-.7.3-2.9H9.5l-.2-2h5.9l.2-2.1H7l-.2-2h10.4l-.9 10.6z"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">CSS3 &amp; Flexbox</span>
+                            </div>
+                            <span class="skill-mono-badge">Flexbox &amp; Grid</span>
+                        </div>
+
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #facc15;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M3 3h18v18H3V3zm9.7 13.7c0 1.8-1 2.6-2.5 2.6-1.3 0-2.1-.7-2.5-1.5l1.4-.8c.3.5.6.9 1.1.9.6 0 1-.3 1-1.2v-5.4h1.5v5.4zm4.8 2.6c-1.6 0-2.6-.8-3.1-1.8l1.4-.8c.4.6.9 1.1 1.7 1.1.7 0 1.2-.4 1.2-.9 0-.6-.5-.8-1.3-1.2l-.5-.2c-1.3-.6-2.2-1.2-2.2-2.7 0-1.3 1-2.4 2.6-2.4 1.1 0 2 .4 2.5 1.4l-1.3.8c-.3-.5-.6-.8-1.2-.8-.5 0-.9.3-.9.8 0 .5.3.8 1.1 1.1l.5.2c1.5.6 2.4 1.3 2.4 2.8 0 1.6-1.2 2.6-2.9 2.6z"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <span class="skill-mono-badge">DOM &amp; Eventos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Backend, Lógica & Datos -->
+                <div class="bento-category-card">
+                    <div class="bento-category-head">
+                        <span class="bento-category-tag" style="color: var(--violet);">Backend, Lógica &amp; Datos</span>
+                        <span class="bento-category-sub">SQL &amp; POO</span>
+                    </div>
+
+                    <div class="skill-cards-list">
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #60a5fa;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                                        <path d="M4 5v7c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+                                        <path d="M4 12v7c0 1.66 3.58 3 8 3s8-1.34 8-3v-7"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">PostgreSQL</span>
+                            </div>
+                            <span class="skill-mono-badge">SQL Relacional</span>
+                        </div>
+
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #fb7185;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M17 8h1a4 4 0 110 8h-1"/>
+                                        <path d="M3 8h14v7a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>
+                                        <path d="M6 2v3M10 2v3M14 2v3" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">Java</span>
+                            </div>
+                            <span class="skill-mono-badge">POO &amp; Lógica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Control de Versiones & Entorno -->
+                <div class="bento-category-card">
+                    <div class="bento-category-head">
+                        <span class="bento-category-tag" style="color: var(--emerald);">Control de Versiones &amp; Entorno</span>
+                        <span class="bento-category-sub">Flujo &amp; CLI</span>
+                    </div>
+
+                    <div class="skill-cards-list">
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #34d399;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <circle cx="6" cy="6" r="3"/>
+                                        <circle cx="6" cy="18" r="3"/>
+                                        <circle cx="18" cy="12" r="3"/>
+                                        <path d="M6 9v6M8.5 7.5L15.5 11"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">Git</span>
+                            </div>
+                            <span class="skill-mono-badge">Ramas &amp; Commits</span>
+                        </div>
+
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #c084fc;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.84c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.58.69.48A10.02 10.02 0 0022 12.26C22 6.58 17.52 2 12 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">GitHub</span>
+                            </div>
+                            <span class="skill-mono-badge">Repositorios</span>
+                        </div>
+
+                        <div class="skill-card-item">
+                            <div class="skill-left">
+                                <div class="skill-svg-wrap" style="color: #38bdf8;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                        <path d="M7 9l3 3-3 3M13 15h4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-name">Linux (WSL2) &amp; VS Code</span>
+                            </div>
+                            <span class="skill-mono-badge">Terminal &amp; IDE</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN FORMACIÓN Y TRAYECTORIA -->
+        <section id="education">
+            <div class="timeline-layout">
+                <div>
+                    <span class="section-tag">03 · Recorrido</span>
+                    <h2 class="section-title">Formación y Trayectoria</h2>
+                </div>
+
+                <div class="timeline-cards">
+                    <article class="timeline-card highlight-daw">
+                        <div class="timeline-card-top">
+                            <div>
+                                <span class="timeline-kicker">DIGITECH FP</span>
+                                <h3 class="timeline-card-title">CFGS en Desarrollo de Aplicaciones Web (DAW)</h3>
+                            </div>
+                            <span class="timeline-status">En curso</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Formación oficial de Grado Superior centrada en programación orientada a objetos con <strong>Java</strong>, diseño y consultas de bases de datos relacionales con <strong>PostgreSQL</strong>, desarrollo frontend con <strong>HTML5, CSS3 y JavaScript</strong> y control de versiones con <strong>Git y GitHub</strong>.
+                        </p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-card-top">
+                            <div>
+                                <span class="timeline-kicker" style="color: var(--cyan);">The Odin Project</span>
+                                <h3 class="timeline-card-title">Full-Stack Foundations (Formación Complementaria)</h3>
+                            </div>
+                            <span class="timeline-status" style="color: var(--cyan); border-color: rgba(0, 240, 255, 0.25);">En curso</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Aprendizaje práctico basado en la construcción de proyectos desde cero sobre entorno Linux (WSL2), afianzando maquetación avanzada con Flexbox y Grid, manipulación dinámica del DOM con JavaScript y publicación en GitHub.
+                        </p>
+                    </article>
+
+                    <article class="timeline-card highlight-mkt">
+                        <div class="timeline-card-top">
+                            <div>
+                                <span class="timeline-kicker" style="color: var(--violet);">Titulación Oficial</span>
+                                <h3 class="timeline-card-title">CFGS en Marketing y Publicidad</h3>
+                            </div>
+                            <span class="timeline-status" style="color: #e9d5ff; border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.12);">Titulada</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Formación superior en estrategia digital, comunicación visual, análisis de producto y comportamiento del usuario. Una base clave que hoy aplico al diseño de interfaces web claras, intuitivas y pensadas para las personas.
+                        </p>
+                    </article>
+
+                    <article class="timeline-card">
+                        <div class="timeline-card-top">
+                            <div>
+                                <span class="timeline-kicker" style="color: var(--text-muted);">Experiencia Profesional</span>
+                                <h3 class="timeline-card-title">Atención al Cliente y Retail</h3>
+                            </div>
+                            <span class="timeline-status" style="color: var(--text-secondary); border-color: var(--border-subtle); background: transparent;">Dependienta</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Experiencia trabajando de cara al público como dependienta: escucha activa, resolución ágil de incidencias en tiempo real, organización y empatía directa con las necesidades reales de cada persona.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN PROYECTOS -->
+        <section id="projects">
+            <div class="section-header">
+                <span class="section-tag">04 · Portfolio</span>
+                <h2 class="section-title">Proyectos</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1: Habit Tracker -->
+                <article class="project-card">
+                    <div>
+                        <div class="project-meta">
+                            <span>EN DESARROLLO</span>
+                            <span>01</span>
+                        </div>
+                        <h3 class="project-title">Habit Tracker</h3>
+                        <p class="project-desc">
+                            Aplicación interactiva para el seguimiento de hábitos diarios, contador de rachas y visualización de progreso en tiempo real mediante manipulación del DOM en JavaScript y CSS3.
+                        </p>
+
+                        <!-- Vista previa estática congelada (sin clics) -->
+                        <div class="inline-habit-widget" style="pointer-events: none;">
+                            <div class="widget-header">
+                                <span style="color: var(--text-secondary);">Racha activa: <strong style="color: var(--cyan);">14 días 🔥</strong></span>
+                                <span style="color: var(--cyan);">67% completado</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" style="width: 67%;"></div>
+                            </div>
+                            <div id="inline-habits-container">
+                                <label class="mini-habit-row">
+                                    <span><input type="checkbox" class="habit-check" checked readonly> Maquetación CSS Flexbox &amp; Grid</span>
+                                    <span class="habit-day-tag">14d</span>
+                                </label>
+                                <label class="mini-habit-row">
+                                    <span><input type="checkbox" class="habit-check" checked readonly> Consultas SQL en PostgreSQL</span>
+                                    <span class="habit-day-tag">9d</span>
+                                </label>
+                                <label class="mini-habit-row">
+                                    <span><input type="checkbox" class="habit-check" readonly> Commit diario en GitHub</span>
+                                    <span class="habit-day-tag muted">21d</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="project-stack-tags">
+                            <span>#HTML5</span>
+                            <span>#CSS3</span>
+                            <span>#JavaScript</span>
+                            <span>#PostgreSQL</span>
+                        </div>
+                        <div class="project-actions-row">
+                            <a href="https://github.com/cathaysagv/habit-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: Odin Recipes -->
+                <article class="project-card">
+                    <div>
+                        <div class="project-meta">
+                            <span style="color: var(--violet);">COMPLETADO · THE ODIN PROJECT</span>
+                            <span>02</span>
+                        </div>
+                        <h3 class="project-title">Odin Recipes</h3>
+                        <p class="project-desc">
+                            Portal web multipágina de recetas diseñado para afianzar los cimientos del desarrollo web: arquitectura limpia de directorios, navegación mediante rutas relativas, semántica HTML5 y estilizado modular con CSS.
+                        </p>
+
+                        <pre class="code-block" style="margin-top: 20px; font-size: 0.74rem;">odin-recipes/
+├── index.html
+├── styles/style.css
+└── recipes/
+    ├── lasagna.html
+    └── ramen.html</pre>
+                    </div>
+
+                    <div>
+                        <div class="project-stack-tags">
+                            <span>#HTML5</span>
+                            <span>#CSS3</span>
+                            <span>#Git</span>
+                            <span>#GitHub</span>
+                        </div>
+                        <div class="project-actions-row">
+                            <button type="button" id="open-recipes-modal" class="btn btn-glass" style="flex: 1;">
+                                Ver Arquitectura
+                            </button>
+                            <a href="https://github.com/cathaysagv/odin-recipes" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">
+                                GitHub ↗
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 6. SECCIÓN CONTACTO -->
+        <section id="contact">
+            <div class="contact-box">
+                <span class="section-tag">05 · Contacto</span>
+                <h2 class="contact-title">Hablemos</h2>
+                <p class="contact-desc">
+                    Abierta a conectar, compartir proyectos y explorar oportunidades de prácticas o colaboración en equipos de desarrollo web.
+                </p>
+
+                <!-- Píldora donde se inyecta el correo protegido desde JS -->
+                <div class="email-pill-wrap">
+                    <button type="button" id="copy-email-pill" class="email-pill" title="Haz clic para copiar correo">
+                        <span id="email-display">✉ Correo</span>
+                        <span class="copy-badge">[Copiar]</span>
+                    </button>
+                </div>
+
+                <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
+                    <a href="#" id="mailto-btn" class="btn btn-primary">Enviar Correo Directo</a>
+                    <a href="https://github.com/cathaysagv" target="_blank" rel="noopener noreferrer" class="btn btn-glass">GitHub ↗</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container footer-flex">
+            <span>© 2026 Cathaysa González Vega · Todos los derechos reservados.</span>
+            <div class="footer-links">
+                <a href="https://github.com/cathaysagv" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL ODIN RECIPES ==================== -->
+    <div id="recipes-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-head">
+                <div>
+                    <span class="section-tag" style="margin-bottom: 2px;">The Odin Project</span>
+                    <h3 class="modal-title">Odin Recipes — Arquitectura</h3>
+                </div>
+                <button type="button" id="close-recipes-modal" class="btn btn-glass" style="padding: 6px 12px;">✕</button>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px;">
+                Proyecto centrado en afianzar la semántica HTML5, rutas relativas entre páginas, listas estructuradas y control de versiones con Git desde la terminal.
+            </p>
+            <pre class="code-block">&lt;article class="recipe-page"&gt;
+  &lt;header&gt;
+    &lt;a href="../index.html"&gt;← Volver al índice&lt;/a&gt;
+    &lt;h1&gt;Ramen Casero&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;section class="ingredients"&gt;...&lt;/section&gt;
+&lt;/article&gt;</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
